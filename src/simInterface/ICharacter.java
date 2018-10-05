@@ -1,6 +1,6 @@
 package simInterface;
 
-public interface ICharacter {
+public interface ICharacter extends Comparable<Object> {
 
 	public void start();
 	public void run();

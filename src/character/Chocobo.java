@@ -24,7 +24,10 @@ public abstract class Chocobo implements ICharacter {
 		this.speed = speed;
 	}
 	public int compareTo(Object o) {
-		int value = Double.compare(this.distance, ((Chocobo)o).distance);
+		int value = 0;
+		if (o instanceof character.Pikachu)  value = Double.compare(this.distance, ((character.Pikachu)o).getDistance());
+		if (o instanceof character.JumperChocobo)  value = Double.compare(this.distance, ((character.JumperChocobo)o).getDistance());
+		if (o instanceof RunnerChocobo)  value = Double.compare(this.distance, ((character.RunnerChocobo)o).getDistance());
 		if(value < 0) {
 			return -1;
 		} else if (value > 0) {

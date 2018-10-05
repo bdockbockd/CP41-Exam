@@ -29,9 +29,9 @@ public class RacingManager {
 	public static void initializeCharacter() {
 		characters[0] = new character.RunnerChocobo();
 		characters[0].start();
-		characters[1] = new character.Pikachu();
+		characters[1] = new character.JumperChocobo();
 		characters[1].start();
-		characters[2] = new character.JumperChocobo();
+		characters[2] = new character.Pikachu();
 		characters[2].start();
 	}
 	
@@ -95,10 +95,6 @@ public class RacingManager {
 		}
 	}
 
-	
-	
-	
-	
 
 	public static void main(String[] args) {
 		kb = new Scanner(System.in);

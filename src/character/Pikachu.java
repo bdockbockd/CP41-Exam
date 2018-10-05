@@ -14,11 +14,13 @@ public class Pikachu implements IObstructable, ICharacter {
 	}
 	
 	public void start() {
-		this.setSpeed(0);
+		this.setSpeed(4);
 	}
 	
 	public void run() {
-		this.setSpeed(this.getDistance()+this.getSpeed());
+		if(this.getObstructedDuration() == 0)
+			this.setSpeed(4);
+		this.setDistance(this.getDistance()+this.getSpeed());
 	}
 	
 	public double getSpeed() {
@@ -60,36 +62,37 @@ public class Pikachu implements IObstructable, ICharacter {
 	}
 	
 	public int compareTo(Object o) {
-//		if (o instanceof character.JumperChocobo) {
-//			int check = Double.compare(this.distance,((character.JumperChocobo)o).distance);
-//			if(check < 0) {
-//				return -1;
-//			} else if (check > 0) {
-//				return 1;
-//			} else {
-//				return 1;
-//			}
-//		} else if(o instanceof character.RunnerChocobo){
-//			int check = Double.compare(this.distance,((character.RunnerChocobo)o).distance);
-//			if(check < 0) {
-//				return -1;
-//			} else if (check > 0) {
-//				return 1;
-//			} else {
-//				return 1;
-//			}
-//		}
-//		return 1;
 		if (o instanceof character.JumperChocobo) {
-			if(this.getDistance() > ((character.JumperChocobo)o).getDistance()) return 1;
-			if(this.getDistance() < ((character.JumperChocobo)o).getDistance()) return 1;
-
-		} else if (o instanceof character.RunnerChocobo) {
-			if(this.getDistance() > ((character.RunnerChocobo)o).getDistance()) return 1;
-			if(this.getDistance() < ((character.RunnerChocobo)o).getDistance()) return 1;
-
-		} 
+			int check = Double.compare(this.distance,((character.JumperChocobo)o).distance);
+			if(check < 0) {
+				return -1;
+			} else if (check > 0) {
+				return 1;
+			} else {
+				return 1;
+			}
+		} else if(o instanceof character.RunnerChocobo){
+			int check = Double.compare(this.distance,((character.RunnerChocobo)o).distance);
+			if(check < 0) {
+				return -1;
+			} else if (check > 0) {
+				return 1;
+			} else {
+				return 1;
+			}
+		}
 		return 1;
+//		if (o instanceof character.JumperChocobo) {
+//			if(this.getDistance() > ((character.JumperChocobo)o).getDistance()) return 1;
+//			if(this.getDistance() < ((character.JumperChocobo)o).getDistance()) return 1;
+//
+//		} else if (o instanceof character.RunnerChocobo) {
+//			if(this.getDistance() > ((character.RunnerChocobo)o).getDistance()) return 1;
+//			if(this.getDistance() < ((character.RunnerChocobo)o).getDistance()) return 1;
+//
+//		} 
+//		return 1;
+//	}
+
 	}
-	
 }

@@ -7,7 +7,7 @@ public class RunnerChocobo extends Chocobo {
 	}
 	
 	public void start() {
-		super.setSpeed(0);
+		super.setSpeed(3);
 	}
 	public void run() {
 		super.setDistance(super.getDistance()+super.getSpeed());

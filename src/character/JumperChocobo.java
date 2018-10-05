@@ -21,6 +21,10 @@ public class JumperChocobo extends Chocobo implements IObstructable {
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
+		if(this.getObstructedDuration() == 0) {
+			this.setSpeed(7.5);
+		}
+		this.turnCount ++;
 		if(this.turnCount %2 ==0)
 			super.setDistance(super.getDistance()+super.getSpeed());
 	}
